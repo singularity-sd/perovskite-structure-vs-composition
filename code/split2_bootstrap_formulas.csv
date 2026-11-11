@@ -1,0 +1,2 @@
+model_a,model_b,mae_difference_eV_cell,bootstrap_95_low,bootstrap_95_high,formula_clusters,replicates
+CrystalGNN,LightGBM_composition,-0.37312317150893637,-0.38821640679476666,-0.3591513099881945,1930,2000

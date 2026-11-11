@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Crystal structure versus composition for the formation energy of unseen perovskite formulas"
+authors:
+  - name: "Singularity"
+year: 2026
+url: "https://github.com/singularity-sd/perovskite-structure-vs-composition"
+license: MIT

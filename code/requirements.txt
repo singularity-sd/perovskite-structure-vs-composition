@@ -1,0 +1,8 @@
+numpy
+pandas
+torch
+matplotlib
+pymatgen
+scikit-learn
+lightgbm
+matminer==0.10.1

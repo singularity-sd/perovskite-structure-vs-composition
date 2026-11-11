@@ -1,0 +1,68 @@
+{
+  "forecast_id": "T3v3-2026-0098",
+  "dataset": "Matbench perovskites",
+  "target": "DFT formation energy, eV per unit cell",
+  "n_samples": 18928,
+  "n_unique_reduced_formulas": 9646,
+  "split": "80/10/20 group split by reduced formula; no reduced formula crosses train, validation, and test",
+  "n_train": 13264,
+  "n_validation": 1893,
+  "n_test": 3771,
+  "split_audit": [
+    {
+      "split": "train",
+      "rows": 13264,
+      "unique_formulas": 6751
+    },
+    {
+      "split": "validation",
+      "rows": 1893,
+      "unique_formulas": 965
+    },
+    {
+      "split": "test",
+      "rows": 3771,
+      "unique_formulas": 1930
+    }
+  ],
+  "models": [
+    {
+      "model": "CrystalGNN",
+      "mean_mae": 0.05539990514215996,
+      "sd_mae": 0.002639864244359114,
+      "mean_rmse": 0.08252234536710766,
+      "mean_r2": 0.9882362383035433,
+      "mean_fit_seconds": 331.38098996666184
+    },
+    {
+      "model": "LightGBM_composition",
+      "mean_mae": 0.4188826977059867,
+      "sd_mae": NaN,
+      "mean_rmse": 0.5524248737658469,
+      "mean_r2": 0.4730556887638405,
+      "mean_fit_seconds": 0.3099896999774501
+    },
+    {
+      "model": "Ridge_composition",
+      "mean_mae": 0.4507122039794922,
+      "sd_mae": NaN,
+      "mean_rmse": 0.5863084000656685,
+      "mean_r2": 0.40643197298049927,
+      "mean_fit_seconds": 0.02522269997280091
+    }
+  ],
+  "paired_bootstrap": {
+    "model_a": "CrystalGNN",
+    "model_b": "LightGBM_composition",
+    "mae_difference_eV_cell": -0.37312317150893637,
+    "bootstrap_95_low": -0.38821640679476666,
+    "bootstrap_95_high": -0.3591513099881945,
+    "formula_clusters": 1930,
+    "replicates": 2000
+  },
+  "notes": [
+    "Perovskites are a ceramic materials family; this tests one materials-property task, not all ceramics or composites.",
+    "Formation energies are calculated values, not experimental measurements.",
+    "Only one group split was evaluated."
+  ]
+}

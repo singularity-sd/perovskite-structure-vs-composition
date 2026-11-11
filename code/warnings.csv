@@ -1,0 +1,2 @@
+category,message
+software_warning,"LightGBM emitted a non-fatal scikit-learn feature-name warning when predicting from a NumPy composition array. It completed and returned results; feature order remained unchanged."

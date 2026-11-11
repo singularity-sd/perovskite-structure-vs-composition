@@ -1,0 +1,118 @@
+{
+  "forecast_id": "T3v3-2026-0098",
+  "forecast_position": 6,
+  "forecast_evidence_count": 1160,
+  "dataset": "Matbench perovskites",
+  "n_samples": 18928,
+  "n_unique_reduced_formulas": 9646,
+  "target": "DFT formation energy in eV per unit cell",
+  "split_audits": [
+    {
+      "split": "Split 1",
+      "train_rows": 13242,
+      "validation_rows": 1898,
+      "test_rows": 3788,
+      "train_formulas": 6751,
+      "validation_formulas": 965,
+      "test_formulas": 1930,
+      "train_validation_overlap": 0,
+      "train_test_overlap": 0,
+      "validation_test_overlap": 0
+    },
+    {
+      "split": "Split 2",
+      "train_rows": 13264,
+      "validation_rows": 1893,
+      "test_rows": 3771,
+      "train_formulas": 6751,
+      "validation_formulas": 965,
+      "test_formulas": 1930,
+      "train_validation_overlap": 0,
+      "train_test_overlap": 0,
+      "validation_test_overlap": 0
+    }
+  ],
+  "metrics_by_split": [
+    {
+      "split": "Split 1",
+      "model": "CrystalGNN",
+      "mae_mean": 0.0586240328787056,
+      "mae_sd": 0.004450374737494703,
+      "rmse_mean": 0.0852480066214038,
+      "r2_mean": 0.9869332190951151,
+      "mean_fit_seconds": 294.78816463332623
+    },
+    {
+      "split": "Split 1",
+      "model": "LightGBM_composition",
+      "mae_mean": 0.4031060082879819,
+      "mae_sd": null,
+      "rmse_mean": 0.5352164041609108,
+      "r2_mean": 0.4854236296797867,
+      "mean_fit_seconds": 0.3244413000065833
+    },
+    {
+      "split": "Split 1",
+      "model": "Ridge_composition",
+      "mae_mean": 0.4366883039474487,
+      "mae_sd": null,
+      "rmse_mean": 0.5723568579953306,
+      "r2_mean": 0.4115293622016907,
+      "mean_fit_seconds": 0.0353981999796815
+    },
+    {
+      "split": "Split 2",
+      "model": "CrystalGNN",
+      "mae_mean": 0.0553999051421599,
+      "mae_sd": 0.002639864244359116,
+      "rmse_mean": 0.08252234536710763,
+      "r2_mean": 0.9882362383035433,
+      "mean_fit_seconds": 331.38098996666184
+    },
+    {
+      "split": "Split 2",
+      "model": "LightGBM_composition",
+      "mae_mean": 0.4188826977059867,
+      "mae_sd": null,
+      "rmse_mean": 0.5524248737658469,
+      "r2_mean": 0.4730556887638405,
+      "mean_fit_seconds": 0.3099896999774501
+    },
+    {
+      "split": "Split 2",
+      "model": "Ridge_composition",
+      "mae_mean": 0.4507122039794922,
+      "mae_sd": null,
+      "rmse_mean": 0.5863084000656685,
+      "r2_mean": 0.4064319729804992,
+      "mean_fit_seconds": 0.0252226999728009
+    }
+  ],
+  "formula_cluster_bootstrap": [
+    {
+      "model_a": "CrystalGNN",
+      "model_b": "LightGBM_composition",
+      "mae_difference_eV_cell": -0.354604808068386,
+      "bootstrap_95_low": -0.3684502886036581,
+      "bootstrap_95_high": -0.3407655346121584,
+      "formula_clusters": 1930,
+      "replicates": 2000
+    },
+    {
+      "model_a": "CrystalGNN",
+      "model_b": "LightGBM_composition",
+      "mae_difference_eV_cell": -0.3731231715089363,
+      "bootstrap_95_low": -0.3882164067947666,
+      "bootstrap_95_high": -0.3591513099881945,
+      "formula_clusters": 1930,
+      "replicates": 2000
+    }
+  ],
+  "interpretation": "The CrystalGNN had much lower held-out MAE than composition-only baselines in both reduced-formula-group splits. Results are restricted to one computational perovskite dataset and do not establish performance on experimental ceramics or composites.",
+  "warnings": [
+    {
+      "category": "software_warning",
+      "message": "LightGBM emitted a non-fatal scikit-learn feature-name warning when predicting from the composition NumPy array. The feature order is unchanged; the model completed and returned results."
+    }
+  ]
+}
